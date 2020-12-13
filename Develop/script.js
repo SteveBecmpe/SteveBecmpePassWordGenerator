@@ -93,22 +93,28 @@ function generatePassword() {
 
 
   // How long do you want your Password to be? 8 min, 128 max
-  var passwordlength = prompt("How long do you want your password? \n 8 characters min, 128 characters max.");
+  var DesiredPwdlength = "DefaultDesiredPwdLength";
   var goodchoice = "NotNull";
+  alert("Variable declarations \n DesiredPwdLength= " + DesiredPwdlength + "\n goodchoice= " + goodchoice);
   while (((goodchoice != null))) {
     alert("inside while");
-    if (passwordlength === null) {
+    DesiredPwdlength = prompt("How long do you want your password? \n 8 characters min, 128 characters max. \n only integers are allowed!");
+    alert("You choose " + DesiredPwdlength);
+    if (DesiredPwdlength === null) {
+      alert("inside if (DesiredPwdlength === null)")
       goodchoice = null;
-      passwordlength = 0;
-    } else
-      if ((passwordlength > 7) && (passwordlength < 128)) {
-        alert("inside comparison if ");
+    } else if ((DesiredPwdlength > 7) && (DesiredPwdlength < 129)) {
+      alert("inside comparison else if ((DesiredPwdlength > 7) && (DesiredPwdlength < 129)) ");
+      DesiredPwdlength = Number(DesiredPwdlength); //need this to do integer comparison 
+      if (Number.isInteger(DesiredPwdlength)) {
+        alert("inside if (Number.isInteger(DesiredPwdlength)) meaning \n DesiredPwdlength= " + Number.isInteger(DesiredPwdlength));
         goodchoice = null;
         alert("goodchoice var = " + goodchoice);
       } else {
-        passwordlength = prompt("Choose a number greater than 7 and less than 128");
+        alert("Your value was NOT an integer")
       }
-  }
+    } //End Else if ((DesiredPwdlength > 7) && (DesiredPwdlength < 129))
+  }//END While
 
 
 
@@ -152,7 +158,7 @@ function generatePassword() {
   // precedence is given in this order SplCharSet, UpperCharSet, NumberCharSet, LowerCharSet
   // number of CharSets choosen needs to be calculated.
 
-}
+}//END function generatePassword()
 
 // Write password to the #password input
 function writePassword() {
