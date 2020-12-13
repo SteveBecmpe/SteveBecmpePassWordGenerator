@@ -80,7 +80,7 @@ function generatePassword() {
   var UpperCaseCharSet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 
   // declare upper case character set array
-  var LowerCaseCharSet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+  var LowerCaseCharSet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
   // declare numbers character set array
   var NumberCharSet = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -119,11 +119,10 @@ function generatePassword() {
 
 
   // do you want to include special characters?
-  var inSplChar = confirm("Include special characters in your password?");
+  var inSplChar = confirm("Include special characters in your password? \n" + SplCharSet);
   if (inSplChar) {
     alert(" I do want to include special characters in my password");
-    alert("These are all the special characters that will be included in the password \n" + SplCharSet);
-    incrementCharSetQty();
+  //  incrementCharSetQty();// this needs to be converted to the object and array max number of characters 
   } else {
     alert(" I do NOT want to include special characters in my password");
   }
@@ -131,20 +130,29 @@ function generatePassword() {
 
 
   // do you want to include upper case characters?
-  var inUpCasChar = confirm("Include UPPER case characters in your password?");
+  var inUpCasChar = confirm("Include UPPER case characters in your password? \n" + UpperCaseCharSet);
   if (inUpCasChar) {
     alert("I do want to include UPPER case characters in my password");
-    incrementCharSetQty();
+  //  incrementCharSetQty();// this needs to be converted to the object and array max number of characters 
+  } else {
+    alert("I do NOT want to include UPPER case characters in my password");
+  }
+
+  // do you want to include Lower case characters?
+  var inLwrCasChar = confirm("Include UPPER case characters in your password? \n" + LowerCaseCharSet);
+  if (inLwrCasChar) {
+    alert("I do want to include Lower case characters in my password");
+  //  incrementCharSetQty();// this needs to be converted to the object and array max number of characters 
   } else {
     alert("I do NOT want to include UPPER case characters in my password");
   }
 
 
   // do you want to include numbers?
-  var inNumberChar = confirm("Include numbers in your password?")
+  var inNumberChar = confirm("Include numbers in your password? \n" + NumberCharSet)
   if (inNumberChar) {
     alert("I do want to include Numbers in my password");
-    incrementCharSetQty();
+  //  incrementCharSetQty();
   } else {
     alert("I do NOT want to include Numbers in my password");
   }
