@@ -9,9 +9,10 @@ function generatePassword() {
   //section 3 build pass word loop
 
   //START SECTION 1 *****************************************************************  
-  var FunctionVsOjbjectBuild = confirm("inside generate password function \n Choose OK to Create a Password using functions and variables \n Choose Cancel to do use the OLD code");// you will see extra alerts in my code. I like to see functions start and variable print. i know console log can do this as well.
-  if (FunctionVsOjbjectBuild) {
-    alert("Building in New section With Functions");
+ // var FunctionVsOjbjectBuild = confirm("inside generate password function \n Choose OK to Create a Password using functions and variables \n Choose Cancel to do use the OLD code");// you will see extra alerts in my code. I like to see functions start and variable print. i know console log can do this as well.
+ var FunctionVsOjbjectBuild = true;
+ if (FunctionVsOjbjectBuild) {
+    //alert("Building in New section With Functions");
     //SECTION 1**************************************************
     //Declare variables, Reset Variables, define functions
 
@@ -113,7 +114,7 @@ function generatePassword() {
       } //End Else if ((DesiredPwdlength > 7) && (DesiredPwdlength < 129))
 
     }
-    alert("Exited the while loop " + "\n Desired Password Lenght is " + DesiredPwdlength + "\n Variable type is " + typeof (DesiredPwdlength) + "\n Variable math.isinteger is " + Number.isInteger(DesiredPwdlength));
+    //alert("Exited the while loop " + "\n Desired Password Lenght is " + DesiredPwdlength + "\n Variable type is " + typeof (DesiredPwdlength) + "\n Variable math.isinteger is " + Number.isInteger(DesiredPwdlength));
 
     // do you want to include special characters?
     var inSplChar = confirm("Include special characters in your password? \n" + SplCharSet);
@@ -158,7 +159,7 @@ function generatePassword() {
     }
 
     //FUNCTION CALL ArrayValueSum 
-    alert("You have chosen to have " + ArrayValueSum(CharSet) + " Chacater Sets Active for Random Password Character Generation");
+    alert("You have chosen to have " + ArrayValueSum(CharSet) + " Character Sets for Password Generation");
 
     //Function CALL TestAIVAF
     // if (confirm("Press OK to test AIVAF")) {
@@ -173,10 +174,10 @@ function generatePassword() {
     //END SECTION 2
 
     //START SECTION 3
-    alert("Start Section 3");
+    //alert("Start Section 3");
     //given the privous variables build the password string
 
-    alert("if statement will start if this value is > 0. Value = " + ArrayValueSum(CharSet));
+    //alert("if statement will start if this value is > 0. Value = " + ArrayValueSum(CharSet));
     if (ArrayValueSum(CharSet) > 0) {
       //alert("Inside if (ArrayValueSum(CharSet) > 0) { ")
       var PRN1 = "DefaultPRN1";
@@ -392,12 +393,12 @@ function generatePassword() {
 
 // Write password to the #password input
 function writePassword() {
-  alert("inside write password function");
+  //alert("inside write password function");
   var password = generatePassword(); // missing function
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-  alert("End of writePassword Function ");
+  //alert("End of writePassword Function ");
 }
 
 // Add event listener to generate button
