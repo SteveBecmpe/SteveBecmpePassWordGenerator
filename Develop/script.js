@@ -60,10 +60,26 @@ function generatePassword() {
     }
     //END Function
 
+    //START Function call for AIVAF This is to test the function above which will be used in the build loop of the password.
+    function TestAIVAF(Proceed) {
+      if (Proceed) {
+        QuitLoop = "NotNull";
+        AivafReturnVal = "Defualt";
+        while (QuitLoop != null) {
+          QuitLoop = prompt("Choose an index of this array to explore \n Character Set: " + CharSet + "\n Character array length: " + CharSet.length +
+            "\n remember arrays start at 0 not 1 \n index min: 0 \n index max: " + (CharSet.length - 1));
+          AivafReturnVal = AIVAF(CharSet, QuitLoop);
+          alert("AIVAF Call with Charset and index: " + QuitLoop + "\n Returned: " + AivafReturnVal);
+        }//end while loop for testing array function
+      }
+      alert("Exiting TestAIVAF");
+    }
+    //END Function Call for AIVAF
+
+
     //END SECTION 1**********************************************
 
     //START SECTION 2********************************************
-
     // How long do you want your Password to be? 8 min, 128 max
     var DesiredPwdlength = "DefaultDesiredPwdLength";
     var goodchoice = "NotNull";
@@ -122,6 +138,7 @@ function generatePassword() {
       // alert("I do NOT want to include UPPER case characters in my password");
     }
 
+
     // do you want to include numbers?
     var inNumberChar = confirm("Include numbers in your password? \n" + NumberCharSet)
     if (inNumberChar) {
@@ -136,14 +153,14 @@ function generatePassword() {
     alert("You have chosen to have " + ArrayValueSum(CharSet) + " Chacater Sets Active for Random Password Character Generation");
 
     //Function CALL TestAIVAF
-    if(confirm("Press OK to test AIVAF")){
+    if (confirm("Press OK to test AIVAF")) {
       TestAIVAF(true);
     }
 
     //  //display the number of character sets to include  
     alert("Variable Declarations \n Character Set Array: " + CharSet + " \n Character Set array Lenght: " + CharSet.length + " \n" + " \n Special Character Set Array: \n" + SplCharSet + 
-    " \n" + " \n Uppder Case Character Set : \n" + UpperCaseCharSet + " \n" + " \n Lower Case Character Set: \n" + LowerCaseCharSet + " \n" +" \n Number Character set:\n" + LowerCaseCharSet +
-      " \n" +" \n Desired Password Lenght is " + DesiredPwdlength + " \n Variable type is " + typeof (DesiredPwdlength) + " \n Variable math.isinteger is " + Number.isInteger(DesiredPwdlength));
+    " \n" + " \n Uppder Case Character Set : \n" + UpperCaseCharSet + " \n"+" \n Lower Case Character Set: \n" + LowerCaseCharSet + " \n"+" \n Number Character set: \n" + NumberCharSet +
+      " \n"+" \n Desired Password Lenght is " + DesiredPwdlength + " \n Variable type is " + typeof (DesiredPwdlength) + " \n Variable math.isinteger is " + Number.isInteger(DesiredPwdlength));
 
 
     //alert("End of New Section \n here are all the variable current values \n CharSet"+  )
