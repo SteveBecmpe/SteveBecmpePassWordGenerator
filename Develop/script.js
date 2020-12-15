@@ -96,13 +96,18 @@ function generatePassword() {
     while (((goodchoice != null))) {
       //  alert("inside while");
       DesiredPwdlength = prompt("How long do you want your password? \n 8 characters min, 128 characters max. \n only integers are allowed!");
-      //  alert("You choose " + DesiredPwdlength);
+      //alert("You choose " + DesiredPwdlength);
       if (DesiredPwdlength === null) {
         //  alert("inside if (DesiredPwdlength === null)");
         alert("You have chosen to NOT build a password. \n Continue to click OK to end.") 
         //set escape variable to skip over all other prompts.**********************************************************************************************************
         goodchoice = null;
-      } else if ((DesiredPwdlength > 7) && (DesiredPwdlength < 129)) {
+      } else if ( ((DesiredPwdlength > 7) && (DesiredPwdlength < 129)) || (DesiredPwdlength==="") ) {
+        //if empty string is chosen the assume default min 8 length
+        if(DesiredPwdlength===""){
+          alert("You just clicked OK without adding a value, default will be 8");
+          DesiredPwdlength = "8";
+        }
         //  alert("inside comparison else if ((DesiredPwdlength > 7) && (DesiredPwdlength < 129)) ");
         DesiredPwdlength = Number(DesiredPwdlength); //need this to do integer comparison 
         if (Number.isInteger(DesiredPwdlength)) {
@@ -160,7 +165,7 @@ if(DesiredPwdlength!=null){
     }
 
     //FUNCTION CALL ArrayValueSum 
-    alert("You have chosen to have " + ArrayValueSum(CharSet) + " Character Sets for Password Generation");
+    //alert("You have chosen to have " + ArrayValueSum(CharSet) + " Character Sets for Password Generation");
 
     //END SECTION 2
 
