@@ -124,7 +124,7 @@ function generatePassword() {
     }
 
     // do you want to include Lower case characters?
-    var inLwrCasChar = confirm("Include UPPER case characters in your password? \n" + LowerCaseCharSet);
+    var inLwrCasChar = confirm("Include lower case characters in your password? \n" + LowerCaseCharSet);
     if (inLwrCasChar) {
       CharSet.push(LowerCaseCharSet.length); //Push Special Character Set array length into Character Set array       
     } else {
