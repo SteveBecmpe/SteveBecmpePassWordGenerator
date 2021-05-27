@@ -144,7 +144,7 @@ if(DesiredPwdlength!=null){
     }
 
     // do you want to include Lower case characters?
-    var inLwrCasChar = confirm("Include UPPER case characters in your password? \n" + LowerCaseCharSet);
+    var inLwrCasChar = confirm("Include lower case characters in your password? \n" + LowerCaseCharSet);
     if (inLwrCasChar) {
       // alert("I do want to include Lower case characters in my password \n" + LowerCaseCharSet);
       CharSet.push(LowerCaseCharSet.length); //Push Special Character Set array length into Character Set array       
